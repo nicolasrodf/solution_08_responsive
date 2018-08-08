@@ -120,7 +120,8 @@ class _CategoryRouteState extends State<CategoryRoute> {
     } else {
       return GridView.count( //Para menajar vista en no-portrait mode setear Gridview (category widget) En no-portrait usamos un gridview en vez de listview
         crossAxisCount: 2, //2 columnas
-        childAspectRatio: 3.0, //mas alto aspect ratio, mas chico es el ajuste entre items
+        childAspectRatio: 0.4, //mas alto aspect ratio, mas chico es el ajuste entre items (original con scroll por defecto era 3)
+        scrollDirection: Axis.horizontal, //original no estaba ya q teniamos scrroll por defecto vertical lo hemos hecho para que no haya tanto scroll al usuario
         children: _categories.map((Category c) {
           return CategoryTile(
             category: c,
